@@ -48,6 +48,6 @@ git clone https://github.com/furkanekici/django-drf-template.git
 
 5. Start the application using Docker Compose:
 
-    docker-compose up
+    docker compose up -d --build
 
 6. Access the Django application in a web browser by going to http://localhost:8000.
