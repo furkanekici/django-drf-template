@@ -10,6 +10,7 @@ services:
       - .:/app
     env_file:
       - .env  # Load environment variables from the .env file
+    restart: unless-stopped
 
   db:
     image: postgres:latest
@@ -17,3 +18,9 @@ services:
       POSTGRES_DB: ${DB_NAME}
       POSTGRES_USER: ${DB_USER}
       POSTGRES_PASSWORD: ${DB_PASSWORD}
+    restart: unless-stopped
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
